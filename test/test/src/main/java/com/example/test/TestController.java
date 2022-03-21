@@ -10,10 +10,16 @@ import jakarta.websocket.server.PathParam;
 @RestController
 @RequestMapping("test")
 public class TestController {
+	
+	final ITestService service;
 
 	
 	@GetMapping(value ="/{id}", produces = "application/json")
 	public Model getTest(@PathVariable int id) {
-		return TestService.getModel(id);
+		return this.service.getModel(id);
+	}
+	
+	public TestController(ITestService aService) {
+		this.service=aService;
 	}
 }

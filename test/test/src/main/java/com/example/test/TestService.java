@@ -1,9 +1,9 @@
 package com.example.test;
 
-public class TestService {
+public class TestService implements ITestService{
 
-	public static Model getModel(int i) {
-		return 	new Model();	
+	public Model getModel(int i) {
+		return 	new Model("from Service");	
 	}
 
 }
