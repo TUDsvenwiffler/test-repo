@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.util.Objects;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +14,7 @@ import org.junit.jupiter.api.Test;
 public class TestTestService {
 
 	
-	private static TestController controller;
+	private TestController controller;
 	
 	@BeforeEach
 	public void setUp() {
@@ -24,7 +26,8 @@ public class TestTestService {
 	@Test
 	public void testGetModel() {
 		Model m = this.controller.getTest(1);
-		assertNotNull(m, "Model must not be null");
+		assertNotNull(m, () -> "Model must not be null");
 		assertEquals("mockModel", m.getName(), "Mock Object contains mocked String");
+		
 	}
 }
