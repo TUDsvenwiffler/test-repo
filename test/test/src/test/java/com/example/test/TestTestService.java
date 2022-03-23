@@ -19,7 +19,9 @@ public class TestTestService {
 	@BeforeEach
 	public void setUp() {
 		ITestService service = mock(ITestService.class);
-		when(service.getModel(1)).thenReturn(new Model("mockModel"));
+		Address addr = new Address("mockStreet", "mockHouse", "mockCity", "mockCountry");
+		ContactInfo contact = new ContactInfo("mockPhoneNumber", "mockEmailAddress");
+		when(service.getModel(1)).thenReturn(new Model(contact, addr, "mockModel"));
 		controller = new TestController(service);
 	}
 	
@@ -27,7 +29,7 @@ public class TestTestService {
 	public void testGetModel() {
 		Model m = this.controller.getTest(1);
 		assertNotNull(m, () -> "Model must not be null");
-		assertEquals("mockModel", m.getName(), "Mock Object contains mocked String");
+		assertEquals("mockModel", m.name(), "Mock Object contains mocked String");
 		
 	}
 }
