@@ -1,22 +1,11 @@
 package com.example.test;
 
-public class Model {
+public record Model(ContactInfo contact, Address address, String name) {
 	
-	private String name;
 
-	public Model(String name) {
-		this.name = name;
+	public Model() {
+		this(new ContactInfo(), new Address(), "");
 	}
-	
-	protected Model() {
-		
-	}
-
-
-	public String getName() {
-		return this.name;
-	}
-	
 	
 	
 
