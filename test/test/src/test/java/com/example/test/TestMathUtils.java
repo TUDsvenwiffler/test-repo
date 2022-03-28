@@ -1,11 +1,12 @@
 package com.example.test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Arrays;
 import java.util.List;
+
 
 import org.junit.jupiter.api.Test;
 
@@ -25,5 +26,14 @@ public class TestMathUtils {
 		double resultDouble = BigDecimalMath.roundToDouble(result, RoundingMode.HALF_UP);
 		assertEquals(6.1, resultDouble);
 	}
-
+	
+	@Test
+	public void testMath2() {
+		BigDecimal a = BigDecimal.valueOf(2.55);
+		BigDecimal b = BigDecimal.valueOf(3.55);
+		
+		BigDecimal c = BigDecimal.valueOf(6.1);
+		
+		assertEquals(c.compareTo(a.add(b)), 0);
+	}
 }
