@@ -25,5 +25,14 @@ public class TestMathUtils {
 		double resultDouble = BigDecimalMath.roundToDouble(result, RoundingMode.HALF_UP);
 		assertEquals(6.1, resultDouble);
 	}
+	
+	@Test
+	public void testOr() {
+		int a = 0;
+		a |= 1;
+		assertEquals(1, a, "Or should result in 1");
+		a &= 0;
+		assertEquals(0, a, "And should result in 0");
+	}
 
 }
