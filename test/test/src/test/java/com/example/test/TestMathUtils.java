@@ -28,6 +28,7 @@ public class TestMathUtils {
 	}
 	
 	@Test
+ 
 	public void testMath2() {
 		BigDecimal a = BigDecimal.valueOf(2.55);
 		BigDecimal b = BigDecimal.valueOf(3.55);
@@ -36,4 +37,14 @@ public class TestMathUtils {
 		
 		assertEquals(c.compareTo(a.add(b)), 0);
 	}
+ 
+	public void testOr() {
+		int a = 0;
+		a |= 1;
+		assertEquals(1, a, "Or should result in 1");
+		a &= 0;
+		assertEquals(0, a, "And should result in 0");
+	}
+
+
 }
