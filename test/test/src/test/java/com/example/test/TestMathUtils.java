@@ -44,6 +44,14 @@ public class TestMathUtils {
 		assertEquals(1, a, "Or should result in 1");
 		a &= 0;
 		assertEquals(0, a, "And should result in 0");
+		
+		int x = 4;
+		int y = 10;
+		x^=y;
+		y^=x;
+		x^=y;
+		assertEquals(x, 10, "Should be swaped to 10");
+		assertEquals(y, 4, "Should be swaped to 4");
 	}
 
 
