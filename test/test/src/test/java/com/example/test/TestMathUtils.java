@@ -28,7 +28,6 @@ public class TestMathUtils {
 	}
 	
 	@Test
- 
 	public void testMath2() {
 		BigDecimal a = BigDecimal.valueOf(2.55);
 		BigDecimal b = BigDecimal.valueOf(3.55);
@@ -38,6 +37,7 @@ public class TestMathUtils {
 		assertEquals(c.compareTo(a.add(b)), 0);
 	}
  
+	@Test
 	public void testOr() {
 		int a = 0;
 		a |= 1;
@@ -52,6 +52,22 @@ public class TestMathUtils {
 		x^=y;
 		assertEquals(x, 10, "Should be swaped to 10");
 		assertEquals(y, 4, "Should be swaped to 4");
+	}
+	
+	@Test
+	public void testNull() {
+		int a = 5;
+		int b = 0;
+		
+		
+		assertThrows(ArithmeticException.class, ()->{
+			int c = a/b;
+		});
+		
+		assertThrows(Throwable.class, ()->{
+			Integer.parseInt("Two");
+		});
+		
 	}
 
 
