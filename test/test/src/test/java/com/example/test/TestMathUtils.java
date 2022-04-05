@@ -69,6 +69,11 @@ public class TestMathUtils {
 		});
 		
 	}
+	
+	@Test
+	public void testInt() {
+		assertNotNull(ITestService.test, "Member must not be null");
+	}
 
 
 }
