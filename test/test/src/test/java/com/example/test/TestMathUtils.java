@@ -76,4 +76,11 @@ public class TestMathUtils {
 	}
 
 
+	@Test
+	public void testShift() {
+		int test = -2;
+		assertEquals(test<<2, -8, "Multiply by 4 with shifts");
+		assertEquals(test, -2, "No assignment by <<");
+		assertEquals(test>>1, -1, "Divide by 2 maintaining the signum");
+	}
 }
