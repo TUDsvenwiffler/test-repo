@@ -16,4 +16,26 @@ public class TestStringUtils {
 		assertEquals(util.findFirstNonRepeating(testB).get(), 'r', "First non reapeating character is r");
 		assertNotEquals(util.findFirstNonRepeating(testC).get(), 'b', "First non repeating character is a not b");
 	}
+	
+	@Test
+	public void testStringBlock() {
+		String test = """
+				Test
+				moreTest	
+				-> Test""";
+		
+		String oldTest = "Test\n"+"moreTest\n"+"-> Test";
+		
+		assertEquals(test, oldTest, "String block should behave like manual concatenation");
+	}
+	
+	@Test
+	public void testFormat() {
+		String test = "AB, %s";
+		String c = String.format(test, "C");
+		String two = String.format(test, 2);
+		
+		assertEquals("AB, C", c);
+		assertEquals("AB, 2", two);
+	}
 }
